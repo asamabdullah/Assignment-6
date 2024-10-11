@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+
+    <style>
+        
+        #imb{
+            border: 1px solid gray;
+            border-radius: 50%;
+        }
+
+        #side-bar{
+            overflow-y:scroll;
+        }
+
+            #border,
+            #border1,
+            #side-bar{
+                border: 1px solid rgb(216, 216, 216);
+            }
+
+
+
+            #spinner{
+                display: none;
+                width: 40px;
+                height: 40px;
+                border: 4px solid rgba(0,0,0, 0.1);
+                border-top: 4px solid #000;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 20px auto;
+            }
+
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+
+    </style>
+
+    
+    <header>
+
+            <nav class="md:flex justify-around pt-10">
+
+                <div class="flex gap-2 justify-center">
+                    <img src="./images/logo.webp" alt="" class="w-10 h-10">
+                    <h1 class="text-3xl font-bold">Peddy</h1>
+                </div>
+
+
+                <div class="flex items-center justify-center mt-5 md:mt-0">
+                    <ul class="flex gap-5">
+                        <li>Home</li>
+                        <li>Shop</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+
+
+                <div class="flex justify-center md:block mt-5 md:mt-0">
+                    <img src="https://img.icons8.com/?size=100&id=2oRq7VXjDba7&format=png&color=000000" alt="" class="w-12 h-12 p-2" id="imb">
+                </div>
+
+            </nav>
+
+
+
+            <!-- nav ends up here -->
+
+
+
+            <!-- banner starts from here -->
+
+
+
+            <div class="mt-20">
+
+                    <div class="p-5">
+
+                        <h1 class="text-slate-500 font-bold text-3xl text-center">Bringing Families Together</h1>
+
+                        <h1 class="text-7xl font-bold text-center mt-10">Your Path to Adoption <br>
+                            Starts Here</h1>
+
+                        <p class="text-center mt-8 text-xl">It is a long established fact that a reader will be distracted by the readable content of a page when looking <br>
+                             at its layout. The point of using that it has a.</p>
+
+                    </div>
+
+                    <div class="flex justify-center mt-5">
+                        
+                    <button class="btn bg-[#0E7A81] text-white px-8" id="view">View More</button>
+                        
+                    </div>
+            </div>
+
+
+            <!-- Picture starts from here -->
+
+
+            <div class="mt-10 flex justify-center">
+
+                <img src="./images/pet.webp" alt="">
+
+            </div>
+
+    </header>
+
+
+
+    <!-- spinner starts from here -->
+
+
+
+
+
+
+    <!-- spinner ends up here -->
+
+
+    <main class="mt-20 main">
+
+            <div>
+
+                <h1 class="text-5xl font-bold text-center">Adopt Your Best Friend</h1>
+
+                <p class="text-xl text-center mt-10">It is a long established fact that a reader will be distracted by the readable content of a <br>
+                     page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+
+            </div>
+
+
+            <!-- category btns starts from here -->
+
+
+
+           <div class="md:flex justify-around mt-16 flex flex-col md:flex-row px-5">
+
+            <button class="btn h-fit p-2 text-2xl px-8 py-2" onclick="handleDog()"><img src="https://img.icons8.com/?size=100&id=A99_ArHXykMC&format=png&color=000000" alt="" class="h-14 w-16"> Dogs </button>
+
+            <button class="btn h-fit p-2 text-2xl px-8 py-2 mt-5 md:mt-0" onclick="handleCat()"><img src="https://img.icons8.com/?size=100&id=ftgzqv4ry3uF&format=png&color=000000" alt="" class="h-14 w-16"> Cats </button>
+
+            <button class="btn h-fit p-2 text-2xl px-8 py-2 mt-5 md:mt-0" onclick="handleRabbit()"><img src="https://img.icons8.com/?size=100&id=101690&format=png&color=000000" alt="" class="h-14 w-16"> Rabbits </button>
+
+            <button class="btn h-fit p-2 text-2xl px-8 py-2 mt-5 md:mt-0" onclick="handleBird()"><img src="https://img.icons8.com/?size=100&id=8Yhi0cuR80EI&format=png&color=000000" alt="" class="h-14 w-16"> Birds </button>
+
+           </div>
+
+
+
+
+           <!-- Sort btn starts from here -->
+
+
+
+
+           <div class="md:flex items-center mt-10 justify-between md:px-28">
+
+                <h1 class="text-3xl font-bold text-center md:text-start">Best Deal For You</h1>
+
+            <div class="flex justify-center">
+
+                <button class="btn text-white bg-[#0E7A81] text-xl md:mt-0 mt-5" id="sortButton" onclick="">Sort by Price</button>
+
+            </div>
+
+           </div>
+
+
+           <!-- orginal -->
+
+
+        <div class="md:flex mt-5 max-w-screen-2xl mx-auto justify-between " id="con-pet-con">
+
+
+
+            <div id="spinner"></div> 
+
+            <div class="px-5 md:px-0">
+
+                <div class="flex flex-wrap gap-5" id="dog"></div>
+
+                <div class="grid grid-cols-3 gap-5" id="cat"></div>
+
+                <div class="grid grid-cols-3 gap-5" id="rabbit"></div>
+
+                <!-- <div class="grid grid-cols-3 gap-5" id="bird"></div> -->
+
+                <div class="bg-slate-100 px-5 py-5 md:py-40 md:px-40 hidden" id="bird">
+
+            
+                    <div class="flex justify-center">
+                        <img src="./images/error.webp" alt="">
+                    </div>
+    
+                    <h1 class="text-center font-bold text-3xl">No Information Avaialable</h1>
+    
+                    <p class="text-center text-lg mt-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at <br> 
+                        its layout. The point of using it has a problem.</p>
+                
+    
+                </div>
+    
+
+            </div>
+
+            
+
+            <div class="md:flex md:flex-row flex flex-col">
+
+                <div id="pet-con" class="flex flex-wrap gap-5 justify-center">
+            
+                
+
+                </div>
+    
+                <!-- side bar starts from here -->
+    
+    
+                <div class="flex justify-center">
+
+                    <div class="h-[1000px] w-[280px] min-w-60 rounded-xl p-5 gap-2 md:mt-0 mt-5" id="side-bar">
+                    
+    
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+
+              <img id="petImage" src="" alt="Pet Image" class="w-full h-full object-cover rounded-md mb-4">
+              <h2 id="modalTitle" class="text-2xl font-bold mb-4">Pet Name</h2>
+
+             <div class="md:flex justify-between block">
+
+                <div>
+
+                    <p class="font-bold flex items-center gap-2"><img src="./images/Breed.png" class="w-[24px] h-[24px]"> Breed: <span id="petBreed" class="font-light"></span></p>
+                    <p class="font-bold flex items-center gap-2 mt-2"><img src="./images/gender.png" class="w-[24px] h-[24px]"> gender: <span id="petGender" class="font-light"></span></p>
+                    <p class="font-bold flex items-center gap-2  mt-2"><img src="./images/vaccine.png" class="w-[24px] h-[24px]"> Vaccinated: <span id="petVaccine" class="font-light"></span></p>
+ 
+                </div>
+ 
+                 <div>
+                    <p class="font-bold flex items-center gap-2"><img src="./images/dollar-symbol.png" class="w-[24px] h-[24px]"> Price: <span id="petPrice" class="font-light"></span></p>
+                    <p class="font-bold flex items-center gap-2 mt-2"><img src="./images/Birth.png" class="w-[24px] h-[24px]"> Date of Birth: <span id="petDob" class="font-light"></span></p>
+                 </div>
+
+             </div>
+
+              <hr class="pt-2 pb-2">
+
+              <h1 class="text-3xl font-bold pb-2">
+                Details information
+              </h1>
+              <p id="petDetails" class="text-gray-600 mb-4">Pet details will go here...</p>
+
+              <div class="modal-action mt-6">
+                <button class="btn bg-[#96CFD2] w-full text-white hover:bg-[#6ECBCF] border-dashed border-2 border-green-500 bg-opacity-80" onclick="closeModal()">Cancel</button>
+              </div>
+            </div>
+          </dialog>
+
+
+
+
+    </main>
+
+
+    <footer class=" bg-black text-white p-20 mt-10 flex justify-around flex-col sm:flex-row gap-y-8">
+
+        <div>
+
+            <div class="flex gap-2">
+                <img src="./images/logo.webp" alt="" class="w-[56px]">
+                <p class="text-3xl">Peddy</p>
+            </div>
+
+            <p class="mt-5 text-xl">
+                Location: av. Washington 165, NY CA 54003 <br> <br>
+                Phone: +31 85 964 47 25 <br> <br>
+                Email: info@yourdomain.com <br> <br>
+                Openings hours: 9.00 AM - 5.00 PM
+            </p>
+
+            <div class="flex mt-5 flex-wrap w-fit mx-auto">
+                <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="">
+
+                <img src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png&color=000000" alt="not found">
+
+                <img src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" alt="not found">
+
+                <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="not found">
+
+            </div>
+
+        </div>
+
+        <div class="text-xl">
+            <h1 class="text-xl">Useful Links</h1>
+                <ul class="mt-5 text-gray-400">
+                    <li>Home</li>
+                    <li class="mt-2">About Us</li>
+                    <li class="mt-2">Animals</li>
+                    <li class="mt-2">Foundation</li>
+                    <li class="mt-2">Contact</li>
+                </ul>
+        </div>
+
+        <div>
+            <h1 class="text-2xl">Drop a Message</h1>
+
+            <input type="text" placeholder="Enter your email" class="p-2 mt-7 w-full rounded text-white bg-gray-700 border-none">
+
+            <button class="btn bg-[#0E7A81] w-full mt-3 border-none">Subscribe</button>
+        </div>
+
+</footer>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
